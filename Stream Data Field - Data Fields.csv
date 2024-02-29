@@ -1,0 +1,140 @@
+Field,Unit,Type,Definition
+asn,Integer,Dim.,Autonomous System Number uniquely identifying each network
+asset_id,Text,Dim.,Asset ID of the video.
+browser,Text,Dim.,"Browser used for the video view (Safari, Chrome, etc.)."
+browser (viewer_application_name),Text,Dim.,Deprecated - see browser
+browser_version,Version,Dim.,Browser version (e.g. 66.0.3359.158).
+browser_version (viewer_application_version),Version,Dim.,Deprecated - see browser_version (viewer_application_version)
+cdn,Text,Dim.,"CDN delivering the video view, either determined by response header auto-detection or provided as video_cdn."
+city,Text,Dim.,City of the viewer.
+continent_code,ISO Code,Dim.,"2-letter ISO code identifying the Continent of the viewer (e.g. NA, EU)."
+country,ISO Code,Dim.,2-letter Country Code.
+country (country_code),ISO Code,Dim.,Deprecated - see country
+country_name,Text,Dim.,Country of the viewer.
+custom_1,Text,Dim.,Customer-defined metadata.
+custom_2,Text,Dim.,Customer-defined metadata.
+custom_3,Text,Dim.,Customer-defined metadata.
+custom_4,Text,Dim.,Customer-defined metadata.
+custom_5,Text,Dim.,Customer-defined metadata.
+custom_6,Text,Dim.,Customer-defined metadata.
+custom_7,Text,Dim.,Customer-defined metadata.
+custom_8,Text,Dim.,Customer-defined metadata.
+custom_9,Text,Dim.,Customer-defined metadata.
+custom_10,Text,Dim.,Customer-defined metadata.
+environment_id,Unique ID,Dim.,"Environment ID, linked with a specific environment"
+error_type,Unique ID,Dim.,Internal ID used to categorize errors.
+error_type (error_type_id),Unique ID,Dim.,Deprecated - see error_type
+exit_before_video_start,Boolean,Metric,Identifies when a viewer abandons the video because it is taking too long to load.
+experiment_name,Text,Dim.,A/B Testing: use this field to separate views into different experiments.
+isp,Text,Dim.,Unused
+latitude,Degrees,Dim.,"Latitude of the viewer, truncated to 1 decimal place."
+live_stream_id,Text,Dim.,Live Stream ID of the video.
+live_stream_latency,Integer,Metric,Live Stream Latency measuring the average time from ingest to display for the view.
+longitude,Degrees,Dim.,"Longitude of the viewer, truncated to one decimal place."
+max_downscale_percentage,Percentage,Metric,Maximum Downscale Percentage at any point in time during a video view.
+max_downscale_percentage (view_max_downscale_percentage),Percentage,Metric,Deprecated - see max_downscale_percentage
+max_upscale_percentage,Percentage,Metric,Maximum Upscale Percentage at any point in time during a video view.
+max_upscale_percentage (view_max_upscale_percentage),Percentage,Metric,Deprecated - see max_upscale_percentage
+metro,Text,Dim.,Unused
+api_version,Text,Dim.,Ignore
+embed_version,Dim.,Dim.,Internal version of Core SDK. Ignore
+viewer_id,Unique ID,Dim.,A Internal ID representing the viewer who is watching the stream.
+operating_system,Text,Dim.,"Operating System (iOS, Windows, etc)."
+operating_system (viewer_os_family),Text,Dim.,Deprecated - see operating_system
+operating_system_version,Version,Dim.,Operating System version (e.g. 10.15).
+operating_system_version (viewer_os_version),Version,Dim.,Deprecated - see operating_system_version
+page_load_time,Milliseconds,Metric,Measures the time from the initial user request for a page to the time when the video player is first initialized
+page_type,Text,Dim.,Provides the context of the page for more specific analysis. Values include watchpage or iframe.
+page_url,URL,Dim.,Page URL
+platform_description,Text,Dim.,Unused
+playback_id,Text,Dim.,Playback ID of the video.
+playback_success_score,Decimal,Dim.,Playback Success Score
+player_autoplay,Boolean,Dim.,Indicates whether the player autoplayed the video or not
+player_error_code,String,Dim.,"An error code that represents a fatal error (one resulting in playback failure). Often an integer, but implementation-dependent."
+player_error_context,Text,Dim.,Error instance-specific information such as stack trace or segment number.
+player_error_message,Text,Dim.,Message sent by the player when an error has been fired up (associated with an error code)
+player_height,Integer,Dim.,"Height of the player as displayed in page, in pixels"
+player_instance_id,Unique ID,Dim.,Identifies the instance of the Player class that is created when a video is initialized
+player_language,Text,Dim.,Player's text language
+player_load_time,Milliseconds,Metric,Deprecated - see player_startup_time)
+player_plugin_name,Text,Dim.,Integration Plugin name (e.g. hls-player)
+player_plugin_version,Version,Dim.,Integration Plugin version (e.g. 2.2.0)
+player_name,Text,Dim.,Identifies different configurations or types of players around your site or application (e.g. My Player)
+player_poster,URL,Dim.,The image shown as the pre-visualisation before play
+player_preload,Boolean,Dim.,Specifies if the player was configured to load the video when the page loads.
+player_remote_played,Boolean,Dim.,Specify from the SDK if the video is remote played to AirPlay or Chromecast.
+player_software,Text,Dim.,"Player Software being used to play the Video (e.g. Video.js, JW Player, etc.)"
+player_software_version,Text,Dim.,Player Software Version (e.g. 2.45.5)
+player_source_domain,Text,Dim.,Video Source Domain (e.g. myvideostreams.com)
+player_source_duration,Milliseconds,Dim.,Video Source Duration
+player_source_height,Integer,Dim.,"Height of the source video being sent to the player, in pixels"
+player_source_stream_type,Text,Dim.,Unused
+player_source_url,URL,Dim.,Video Source URL
+player_source_width,Integer,Dim.,Width of the source video being as seen by the player
+player_startup_time,Milliseconds,Metric,Measures the time from when the player is first initialized in the page to when it is ready to receive further instructions.
+player_version,Text,Dim.,As you make changes to your player you can compare how new versions of your player perform. Set in combination with player_name (e.g. 1.2.0)
+player_view_count,Integer,Dim.,View Count - equal to 1 in Full Exports (1 line = 1 video view)
+player_width,Integer,Dim.,"Width of the player as displayed in page, in pixels"
+property_id,Unique ID,Dim.,"Property ID, linked with a specific environment. Deprecated, please use environment_id."
+rebuffer_count,Integer,Metric,Number of rebuffering events that happen during the video view.
+rebuffer_count (buffering_count),Integer,Metric,Deprecated - see rebuffer_count
+rebuffer_duration,Milliseconds,Metric,Amount of time in milliseconds that viewers wait for rebuffering per video view.
+rebuffer_duration (buffering_duration),Milliseconds,Metric,Deprecated - see rebuffer_duration
+rebuffer_frequency,Events per millisecond,Metric,Measures how often rebuffering events happen.
+rebuffer_frequency (buffering_rate),Events per millisecond,Metric,Deprecated - see rebuffer_frequency
+rebuffer_percentage,Percentage,Metric,Volume of rebuffering that is occurring across the view
+region,Text,Dim.,Region of the viewer
+session_id,Unique ID,Dim.,Session ID tracking a viewer's session
+smoothness_score,Decimal,Score,Smoothness Score
+source_hostname,Text,Dim.,Video Hostname (e.g. media.myvideos.com).
+source_hostname (player_source_host_name),Text,Dim.,Deprecated - see source_hostname
+source_type,Text,Dim.,"Format of the source, as determined by the player. E.g. 'dash', 'application/x-mpegurl', 'video/mp4', etc."
+source_type (player_source_type),Text,Dim.,Deprecated - see source_type
+startup_time_score,Decimal,Score,Startup Time Score
+stream_type,Text,Dim.,Type of stream (e.g. 'live' or 'on-demand').
+stream_type (video_stream_type),Text,Dim.,Deprecated - see stream_type
+sub_property_id,Text,Dim.,Sub Property Id
+time_to_first_frame,Milliseconds,Metric,Deprecated - see video_startup_time
+used_fullscreen,Boolean,Dim.,Indicates whether the viewer used full screen to watch the video.
+video_content_type,Text,Dim.,"Content Type (e.g. 'short', 'movie', 'episode', 'clip', 'trailer', or 'event')."
+video_duration,Milliseconds,Dim.,The length of the video supplied to Mlytics via custom metadata
+video_encoding_variant,Text,Dim.,An optional detail that allows you to compare different encoding settings.
+video_id,Unique ID,Dim.,Your internal ID for the video
+video_language,Text,Dim.,"The audio language of the video, assuming it's unchangeable after playing."
+video_producer,Text,Dim.,The producer of the video title
+video_quality_score,Decimal,Score,Video Quality Score
+video_series,Text,Dim.,Series name (e.g. 'The Girls')
+video_startup_time,Milliseconds,Metric,"(Video Startup Time on Dashboards) Measures from when the player has been instructed to play the video, to when the first frame of video (either content or preroll ad) is showing and the playhead is progressing."
+video_startup_failure,Boolean,Metric,Identifies when a viewer encounters an error before the first frame of the video begins playback.
+video_title,Text,Dim.,Video Title
+video_variant_id,Unique ID,Dim.,Your internal ID for a video variant
+video_variant_name,Text,Dim.,"An optional detail that allows you to monitor issues with the files of specific versions of the content, for example different audio translations or versions with hard-coded/burned-in subtitles."
+view_downscaling_percentage,Percentage,Metric,Downscale Percentage
+view_drm_type,Text,Dim.,The type of DRM used during playback (e.g. 'widevine' or 'playready').
+view_dropped_frame_count,Integer,Metric,The number of frames that were dropped by the player during playback
+view_end,Time,Dim.,"Date and Time at which the view ended, in UTC."
+view_has_ad,Boolean,Metric,Identifies if an advertisement played or attempted to play during the video view.
+view_id,Unique ID,Dim.,Unique View Identifier
+view_max_playhead_position,Milliseconds,Dim.,"The furthest the video was played, indicated by the maximum time value of the playhead during the view."
+view_playing_time,Milliseconds,Metric,"The amount of time the video spent playing during the view; this value does not include time spent joining, rebuffering, or seeking."
+view_seek_count,Integer,Dim.,The number of times that the viewer attempted to seek to a new location within the view.
+view_seek_duration,Milliseconds,Dim.,Total amount of time spent waiting for playback to resume after the viewer seeks to a new location. Seek Latency metric in the Dashboard is this value divided by view_seek_count.
+view_session_id,Unique ID,Dim.,An id that can be used to correlate the view with platform services upstream such as CDN or origin logs.
+view_start,Time,Dim.,"Date and Time at which the view started, in UTC."
+view_total_content_playback_time,Milliseconds,Dim.,Internal metric used in calculating upscale and downscale percentages.
+view_total_downscaling,Milliseconds,Dim.,Internal number used to calculate Downscale Percentage Metric. Downscale Percentage = view_total_downscaling / view_total_content_playback_time
+view_total_upscaling,Milliseconds,Dim.,Internal number used to calculate Upscale Percentage Metric. Upscale Percentage = view_total_upscaling / view_total_content_playback_time
+view_upscaling_percentage,Percentage,Metric,Upscale Percentage
+viewer_application_engine,Text,Dim.,"Web Browser Engine (Gecko, WebKit, etc)"
+viewer_connection_type,Text,Dim.,"The type of network connection used by the device, where available (e.g. mobile, wired, wireless)"
+viewer_device_category,Text,Dim.,"The type of device used (e.g. console, desktop, phone, tablet, TV)"
+viewer_device_manufacturer,Text,Dim.,"Device Brand (e.g. Apple, Microsoft)"
+viewer_device_model,Text,Dim.,"Device Model (e.g. iPhone11,2)"
+viewer_device_name,Text,Dim.,Device Name (e.g. iPhone 12)
+viewer_experience_score,Decimal,Score,Overall Viewer Experience Score
+viewer_os_architecture,Text,Dim.,No longer used. Ignore.
+viewer_user_agent,Text,Dim.,User Agent (e.g. Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0))
+viewer_user_id,Unique ID,Dim.,"A Customer-defined ID representing the viewer who is watching the stream. Note: You should not use any value that is personally identifiable such as email address, username, etc. Instead, you should supply an anonymized viewer ID which you have stored within your own system."
+watch_time,Milliseconds,Dim.,"Total Watch Time across the view (includes Startup Time, Playing time, potential rebuffering)."
+watched,Boolean,Dim.,Ignore
+weighted_average_bitrate,bits/sec,Metric,"Weighted Average Bitrate, expressed in bps."
