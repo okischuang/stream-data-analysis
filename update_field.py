@@ -8,6 +8,7 @@ df = pd.read_csv('./final_dataset.csv')
 # Replace 'asset_id' with new UUIDs
 df['asset_id'] = [str(uuid.uuid4()) for _ in range(len(df))]
 df['sub_property_id'] = [str(uuid.uuid4()) for _ in range(len(df))]
+# df['ad_id'] = [str(uuid.uuid4()) for _ in range(len(df))]
 
 # Define lists of well-known CDN providers and ISPs for more realistic data generation
 cdn_providers = ['Akamai', 'Cloudflare', 'Fastly', 'CDN77', 'KeyCDN', 'StackPath', 'Amazon CloudFront', 'Microsoft Azure CDN', 'Google Cloud CDN']
@@ -99,6 +100,22 @@ df['viewer_application_engine'] = np.random.choice(browser_engines, size=len(df)
 
 viewer_connection_types = ['mobile', 'wired', 'wireless']
 df['viewer_connection_type'] = np.random.choice(viewer_connection_types, size=len(df))
+
+# AD
+df['ad_length'] = np.random.randint(5, 30, size=len(df))
+# Setting the random seed for reproducibility
+np.random.seed(42)
+
+# Generating synthetic 'ad_quantity' field
+# For views with ads, assign a random number of ads between 1 and 5. For views without ads, assign 0.
+df['ad_quantity'] = np.where(df['view_has_ad'], np.random.randint(1, 6, size=len(df)), 0)
+
+# Generating synthetic 'ad_length' field
+# For views with ads, assign a random total ad length between 10 and 120 seconds. For views without ads, assign 0.
+df['ad_length'] = np.where(df['view_has_ad'], np.random.randint(10, 121, size=len(df)), 0)
+
+# Displaying the first few rows to verify the new fields
+df[['view_has_ad', 'ad_quantity', 'ad_length']].head()
 
 # Save the updated dataset
 df.to_csv('final_dataset.csv', index=False)
